@@ -30,4 +30,3 @@ jobs:
           git add pihole_blocklist.txt
           git commit -m "Aggiornamento automatico della blocklist"
           git push
-
