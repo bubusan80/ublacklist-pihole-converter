@@ -3,7 +3,7 @@ ublacklist for pihole
 
 # uBlacklist Pi-hole Converter
 
-Questo progetto converte la lista [uBlacklist](https://github.com/gorhill/uBlacklist) in un formato compatibile con Pi-hole.
+Questo progetto converte la lista [uBlacklist](https://raw.githubusercontent.com/popcar2/BadWebsiteBlocklist/refs/heads/main/uBlacklist.txt) in un formato compatibile con Pi-hole.
 
 ## 🔄 Aggiornamento automatico
 
