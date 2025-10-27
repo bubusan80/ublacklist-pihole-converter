@@ -18,10 +18,11 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
-
+          
       - name: Installa le dipendenze
         run: pip install requests
-        - name: Esegui lo script di conversione
+
+     - name: Esegui lo script di conversione
         run: python convert_ublacklist.py
 
       - name: Commit e push dei cambiamenti
