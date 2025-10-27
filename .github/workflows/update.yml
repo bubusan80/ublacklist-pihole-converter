@@ -9,19 +9,25 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup Python
+      - name: Clona il repository
+        uses: actions/checkout@v3
+
+      - name: Imposta Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
-      - name: Install dependencies
+
+      - name: Installa le dipendenze
         run: pip install requests
-      - name: Run conversion script
+
+      - name: Esegui lo script di conversione
         run: python convert_ublacklist.py
-      - name: Commit and push
+
+      - name: Commit e push dei cambiamenti
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add pihole_blocklist.txt
-          git commit -m "Aggiornamento automatico"
+          git commit -m "Aggiornamento automatico della blocklist"
           git push
+
