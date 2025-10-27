@@ -23,10 +23,13 @@ jobs:
       - name: Esegui lo script di conversione
         run: python convert_ublacklist.py
 
-      - name: Commit e push dei cambiamenti
+           - name: Commit e push dei cambiamenti
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add pihole_blocklist.txt
-          git commit -m "Aggiornamento automatico della blocklist"
-          git push
+          git commit -m "Aggiornamento automatico della blocklist" || echo "Nessuna modifica da committare"
+          git push https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git HEAD:main
+
