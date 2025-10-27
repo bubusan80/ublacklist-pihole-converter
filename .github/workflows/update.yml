@@ -3,7 +3,9 @@ name: Aggiorna la blocklist
 on:
   schedule:
     - cron: '0 3 * * 1'  # Ogni lunedì alle 3:00
-  workflow_dispatch:
+workflow_dispatch:
+  permissions:
+  contents: write
 
 jobs:
   update:
@@ -19,18 +21,13 @@ jobs:
 
       - name: Installa le dipendenze
         run: pip install requests
-
-      - name: Esegui lo script di conversione
+        - name: Esegui lo script di conversione
         run: python convert_ublacklist.py
 
       - name: Commit e push dei cambiamenti
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          git config user.name "bubusan80"
+          git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/bubusan80/ublacklist-pihole-converter.git
           git add pihole_blocklist.txt
           git commit -m "Aggiornamento automatico della blocklist" || echo "Nessuna modifica"
-          git push origin HEAD:main
-
+          git push
