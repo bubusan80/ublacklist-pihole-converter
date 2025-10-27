@@ -1,22 +1,21 @@
 import requests
 from urllib.parse import urlparse
 
-UBLACKLIST_URL = "https://raw.githubusercontent.com/uBlacklist/blocked/main/uBlacklist.txt"
+URL = "https://raw.githubusercontent.com/popcar2/BadWebsiteBlocklist/refs/heads/main/uBlacklist.txt"
 
-response = requests.get(UBLACKLIST_URL)
+response = requests.get(URL)
 lines = response.text.splitlines()
 
 domains = set()
 for line in lines:
     line = line.strip()
-    if not line or line.startswith("!"):
+    if not line or line.startswith("!") or not "*://" in line:
         continue
 
-    # Rimuove protocollo e wildcard
-    line = line.replace("*://", "").replace("http://", "").replace("https://", "")
-    line = line.split("/")[0]  # Rimuove path
+    # Rimuove protocollo e path
+    line = line.replace("*://", "").split("/")[0]
+    line = line.lstrip("*.")  # Rimuove wildcard iniziale
 
-    # Estrae dominio valido
     parsed = urlparse("http://" + line)
     hostname = parsed.hostname
     if hostname and "." in hostname:
