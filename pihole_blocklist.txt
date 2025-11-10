@@ -45,6 +45,7 @@ chatgptdemo.org
 chatopenai.de
 cloudinary.com
 clrn.org
+codefinity.com
 codeparrot.ai
 commandexamples.com
 commandmasters.com
@@ -204,6 +205,7 @@ pixcap.com
 playbite.com
 privacytools.io
 privateproxyguide.com
+pupuweb.com
 quso.ai
 rav.ai
 reasonlabs.com
