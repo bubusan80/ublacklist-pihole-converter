@@ -22,6 +22,7 @@ betanet.net
 bettertechtips.com
 bitdegree.org
 bizknowledges.com
+blockchain.news
 blog.avast.com
 blog.cdkeys.com
 blog.eklipse.gg
@@ -59,6 +60,7 @@ cruiseship.cloud
 csgocaptain.com
 cyber-fox.net
 cyberinfoblog.com
+cyberpost.co
 cybersecuritynews.com
 datanumen.com
 deepseekap.org
@@ -166,6 +168,7 @@ lindy.ai
 linoxide.com
 linuxcapable.com
 linuxmadesimple.info
+linuxvox.com
 live2tech.com
 longshot.ai
 madpenguin.org
@@ -235,6 +238,7 @@ shell-tips.com
 shiftychevre.com
 shokz.com
 shopify.com
+sider.ai
 simplified.com
 simplilearn.com
 skycoach.gg
